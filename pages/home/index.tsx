@@ -1,45 +1,57 @@
 import * as React from "react";
 import styled from "styled-components";
 import Image from "next/image";
+import { Typography } from "../../ui/Typography";
 
 const Container = styled.div`
-  width: 100%;
-  height: 100%;
+  background: linear-gradient(135deg, #3245ed, #7e2ce7);
   display: flex;
   flex: 1;
-  background: linear-gradient(to right, red, yellow);
-
-  .image {
-    position: absolute;
-    left: -0.18%;
-    right: 51.99%;
-    top: 39.06%;
-    bottom: 8.21%;
-  }
 `;
 
-const Backdrop = styled(Image)`
-  /* image 632 */
+const ImageWrapper = styled.div`
+  margin: 160px 15px 84px 0;
 `;
+
+const Content = styled.div`
+  margin: 83px 861px 0 121px;
+`;
+
+const LeftContent = styled.div``;
+
+const RightContent = styled.div``;
+
+const MenuListIcon = styled.div``;
 
 interface HomeEntrancePageProps {
   content?: string;
 }
 
 export const HomeEntrancePage = (props: HomeEntrancePageProps) => {
-  const { content } = props;
-
   return (
     <Container>
-      <h1>{content}</h1>
-      <Image
-        className="image"
-        src="/public/img.png"
-        width={20}
-        height={20}
-        alt="Image"
-        objectFit="contain"
-      />
+      <LeftContent>
+        <Content>
+          <Typography type="sub-header" color="white">
+            Welcome to
+          </Typography>
+          <Typography type="header" color="white">
+            GrainLogic!
+          </Typography>
+        </Content>
+        <ImageWrapper>
+          <Image
+            src="/img.png"
+            width={694}
+            height={540}
+            alt="Image"
+            objectFit="contain"
+          />
+        </ImageWrapper>
+      </LeftContent>
+      <RightContent>
+        <MenuListIcon></MenuListIcon>
+      </RightContent>
     </Container>
   );
 };
