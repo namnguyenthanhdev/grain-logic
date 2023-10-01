@@ -35,14 +35,14 @@ const Status = styled.div`
   border-radius: 50%;
   width: 100%;
   height: 100%;
-  border: 2px solid #fff;
+  border: 2px solid ${colors.white100};
   background: ${colors.gray50};
 
   svg {
     width: 80px;
     height: 80px;
     path {
-      fill: #ffffff;
+      fill: ${colors.white100};
     }
   }
 `;

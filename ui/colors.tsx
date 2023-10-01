@@ -7,6 +7,7 @@ export const colors = {
 
   gray8: "rgba(255, 255, 255, 0.08)",
   gray50: "rgba(255, 255, 255, 0.5)",
+  gray40: "rgba(255, 255, 255, 0.4)",
   gray30: "rgba(255, 255, 255, 0.3)",
 
   black16: "rgba(27, 27, 27, 0.16)",

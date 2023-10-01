@@ -19,6 +19,13 @@ import {
 import { DeviceRoomSingleItem } from "../../ui/DeviceRoomSingleItem";
 import { DeviceRoomGroupItem } from "../../ui/DeviceRoomGroupItem";
 import { colors } from "../../ui/colors";
+import { Modal } from "../../ui/Modal";
+
+const ModalIds = {
+  first: "first-modal",
+  second: "second-modal",
+  third: "third-modal",
+};
 
 const Container = styled.div`
   background: linear-gradient(135deg, ${colors.blue100}, ${colors.purple100});
@@ -52,11 +59,80 @@ const MenuListIcon = styled.div`
   gap: 32px;
 `;
 
+const GroupWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 44px;
+  justify-content: center;
+  align-items: center;
+`;
+
 interface HomeEntrancePageProps {
   content?: string;
 }
 
 export const HomeEntrancePage = (props: HomeEntrancePageProps) => {
+  const [modalId, setModalId] = React.useState(null);
+  const [open, setOpen] = React.useState(false);
+
+  const renderModalContent = React.useCallback((id) => {
+    switch (id) {
+      case ModalIds.first:
+        return (
+          <GroupWrapper>
+            <DeviceRoomSingleItem
+              content="Developer"
+              icon={<Box variant="Bold" />}
+            />
+            <DeviceRoomSingleItem
+              content="Developer"
+              icon={<Building variant="Bold" />}
+            />
+          </GroupWrapper>
+        );
+      case ModalIds.second:
+        return (
+          <GroupWrapper>
+            <DeviceRoomSingleItem
+              content="Developer"
+              icon={<Additem variant="Bold" />}
+            />
+            <DeviceRoomSingleItem
+              content="Developer"
+              icon={<InfoCircle variant="Bold" />}
+            />
+            <DeviceRoomSingleItem
+              content="Developer"
+              icon={<FavoriteChart variant="Bold" />}
+            />
+            <DeviceRoomSingleItem
+              content="Developer"
+              icon={<People variant="Bold" />}
+            />
+          </GroupWrapper>
+        );
+      case ModalIds.third:
+        return (
+          <GroupWrapper>
+            <DeviceRoomSingleItem
+              content="Developer"
+              icon={<ShoppingCart variant="Bold" />}
+            />
+            <DeviceRoomSingleItem
+              content="Developer"
+              icon={<ChartSquare variant="Bold" />}
+            />
+            <DeviceRoomSingleItem
+              content="Developer"
+              icon={<TicketDiscount variant="Bold" />}
+            />
+          </GroupWrapper>
+        );
+      default:
+    }
+  }, []);
+
   return (
     <Container>
       <LeftContent>
@@ -87,6 +163,10 @@ export const HomeEntrancePage = (props: HomeEntrancePageProps) => {
           <DeviceRoomGroupItem
             content="Explore"
             icons={[<Box variant="Bold" />, <Building variant="Bold" />]}
+            onClick={() => {
+              setOpen(true);
+              setModalId(ModalIds.first);
+            }}
           />
           <DeviceRoomGroupItem
             content="Profiles"
@@ -96,6 +176,10 @@ export const HomeEntrancePage = (props: HomeEntrancePageProps) => {
               <FavoriteChart variant="Bold" />,
               <People variant="Bold" />,
             ]}
+            onClick={() => {
+              setOpen(true);
+              setModalId(ModalIds.second);
+            }}
           />
           <DeviceRoomGroupItem
             content="Store"
@@ -104,6 +188,10 @@ export const HomeEntrancePage = (props: HomeEntrancePageProps) => {
               <ChartSquare variant="Bold" />,
               <TicketDiscount variant="Bold" />,
             ]}
+            onClick={() => {
+              setOpen(true);
+              setModalId(ModalIds.third);
+            }}
           />
           <DeviceRoomSingleItem
             content="Developer"
@@ -118,6 +206,9 @@ export const HomeEntrancePage = (props: HomeEntrancePageProps) => {
             icon={<LogoutCurve variant="Bold" />}
           />
         </MenuListIcon>
+        <Modal show={open} handleClose={() => setOpen(false)}>
+          {renderModalContent(modalId)}
+        </Modal>
       </RightContent>
     </Container>
   );
