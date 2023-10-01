@@ -22,7 +22,7 @@ const SmallWidget = styled.div`
 
   border-radius: 100px;
 
-  background: ${colors.white80};
+  background: ${colors.gray8};
   box-shadow: ${shadows.shadow1};
   backdrop-filter: blur(40px);
 `;
@@ -36,7 +36,7 @@ const Status = styled.div`
   width: 100%;
   height: 100%;
   border: 2px solid #fff;
-  background: #ffffff80;
+  background: ${colors.gray50};
 
   svg {
     width: 80px;
@@ -49,15 +49,14 @@ const Status = styled.div`
 
 export interface DeviceRoomSingleItemProps {
   content: string;
-  onClick?: () => void;
   icon: React.ReactNode;
 }
 export const DeviceRoomSingleItem = (props: DeviceRoomSingleItemProps) => {
-  const { content, icon, onClick } = props;
+  const { content, icon } = props;
   return (
     <Container>
       <SmallWidget>
-        <Status onClick={onClick}>{icon}</Status>
+        <Status>{icon}</Status>
       </SmallWidget>
       <Typography type="label" color={colors.white100}>{content}</Typography>
     </Container>

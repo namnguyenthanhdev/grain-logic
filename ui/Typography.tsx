@@ -19,13 +19,13 @@ const EnhancedParagraph = styled.p<{ $color: string }>`
 
   &.sub-header {
     font-size: 48px;
-    line-height: 72px;
+    line-height: 36px;
     font-weight: 600;
   }
 
   &.header {
     font-size: 80px;
-    line-height: 72px;
+    line-height: 36px;
     font-weight: 800;
   }
 `;

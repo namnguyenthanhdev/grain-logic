@@ -44,9 +44,9 @@ const SmallWidget = styled.div`
   gap: 16px;
 
   border-radius: 24px;
-  border: 2px solid ${colors.white100};
-  background: ${colors.gray80};
-  box-shadow: 0 8px 16px 0 ${colors.gray16};
+
+  background: ${colors.gray8};
+  box-shadow: ${shadows.shadow1};
   backdrop-filter: blur(40px);
 `;
 
@@ -68,7 +68,7 @@ const Status = styled.div`
   width: 100%;
   height: 100%;
   border: 2px solid ${colors.white100};
-  background: ${colors.gray80};
+  background: ${colors.gray30};
 
   svg {
     width: 40px;
@@ -88,7 +88,7 @@ interface DeviceRoomGroupItemProps {
 export const DeviceRoomGroupItem = (props: DeviceRoomGroupItemProps) => {
   const { content, icons, onClick } = props;
   return (
-    <Container>
+    <Container onClick={onClick}>
       <SmallWidget>
         {icons?.map((icon, index) => {
           return (
