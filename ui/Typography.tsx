@@ -5,22 +5,24 @@ import cl from "classnames";
 const EnhancedParagraph = styled.p<{ $color: string }>`
   font-style: normal;
   color: ${(props) => props.$color};
-
   &.label {
     font-size: 24px;
     line-height: 36px;
     font-weight: 500;
   }
+
   &.title {
     font-size: 64px;
     line-height: normal;
     font-weight: 500;
   }
+
   &.sub-header {
     font-size: 48px;
     line-height: 72px;
     font-weight: 600;
   }
+
   &.header {
     font-size: 80px;
     line-height: 72px;
@@ -36,7 +38,7 @@ interface TypographyProps {
 }
 
 export const Typography = (props: TypographyProps) => {
-  const { className, children, type = "title", color } = props;
+  const { className, type = "title", children, color } = props;
   return (
     <EnhancedParagraph
       className={cl("responsive-typography", className, { [type]: type })}
