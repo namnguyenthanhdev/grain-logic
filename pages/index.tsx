@@ -14,7 +14,7 @@ export default function Home() {
         <title>Grain Logic Entrance</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <HomeEntrancePage content="aaaaaaa afkafjkajf" />
+      <HomeEntrancePage />
     </Container>
   );
 }

@@ -2,6 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import { Typography } from "./Typography";
 import { colors, shadows } from "./colors";
+import cl from "classnames";
 
 export const GradientBorder = styled.div`
   .boxed {
@@ -48,6 +49,34 @@ const SmallWidget = styled.div`
   background: ${colors.gray8};
   box-shadow: ${shadows.shadow1};
   backdrop-filter: blur(40px);
+
+  &:hover {
+    background: ${colors.gray30};
+  }
+
+  &:active {
+    background: ${colors.gray50};
+  }
+
+  &.disabled {
+    background: ${colors.black16};
+    cursor: not-allowed;
+    .status {
+      background: ${colors.gray8};
+      border: 0;
+    }
+    path {
+      fill: ${colors.white50};
+    }
+  }
+
+  svg {
+    width: 40px;
+    height: 40px;
+    path {
+      fill: ${colors.white100};
+    }
+  }
 `;
 
 const IconItem = styled.div`
@@ -69,27 +98,20 @@ const Status = styled.div`
   height: 100%;
   border: 2px solid ${colors.white100};
   background: ${colors.gray30};
-
-  svg {
-    width: 40px;
-    height: 40px;
-    path {
-      fill: ${colors.white100};
-    }
-  }
 `;
 
 interface DeviceRoomGroupItemProps {
   content: string;
   onClick?: () => void;
   icons: React.ReactNode[];
+  disabled?: boolean;
 }
 
 export const DeviceRoomGroupItem = (props: DeviceRoomGroupItemProps) => {
-  const { content, icons, onClick } = props;
+  const { content, icons, onClick, disabled } = props;
   return (
     <Container onClick={onClick}>
-      <SmallWidget>
+      <SmallWidget className={cl("widget", { disabled })}>
         {icons?.map((icon, index) => {
           return (
             <IconItem key={index}>
@@ -98,7 +120,11 @@ export const DeviceRoomGroupItem = (props: DeviceRoomGroupItemProps) => {
           );
         })}
       </SmallWidget>
-      <Typography type="label" color={colors.white100}>
+      <Typography
+        className="device-room-label"
+        type="label"
+        color={disabled ? colors.white50 : colors.white100}
+      >
         {content}
       </Typography>
     </Container>
