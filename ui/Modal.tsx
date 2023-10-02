@@ -60,7 +60,7 @@ interface ModalProps {
   handleClose: () => void;
   body: ModalContentProps;
 }
-export const Modal = (props) => {
+export const Modal = (props: ModalProps) => {
   const { handleClose, show, body } = props;
   return (
     <Container

@@ -1,6 +1,5 @@
 import * as React from "react";
 import styled from "styled-components";
-import Image from "next/image";
 import { Typography } from "../../ui/Typography";
 import {
   Additem,
@@ -39,6 +38,12 @@ const Content = styled.div`
   .sub-header {
     width: 300px;
   }
+`;
+
+const ImageLayout = styled.div`
+  margin: 160px 15px 84px 0;
+  width: 1000px;
+  height: 600px;
 `;
 
 const LeftContent = styled.div`
@@ -154,7 +159,9 @@ export const HomeEntrancePage = () => {
             GrainLogic!
           </Typography>
         </Content>
-        <GrainLogicImage />
+        <ImageLayout>
+          <GrainLogicImage />
+        </ImageLayout>
       </LeftContent>
       <RightContent>
         <MenuListIcon>

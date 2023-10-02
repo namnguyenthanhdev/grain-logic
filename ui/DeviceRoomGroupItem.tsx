@@ -4,30 +4,6 @@ import { Typography } from "./Typography";
 import { colors, shadows } from "./colors";
 import cl from "classnames";
 
-export const GradientBorder = styled.div`
-  .boxed {
-    width: 64px;
-    height: 64px;
-    position: relative;
-    background-clip: padding-box;
-    border: 2px solid transparent;
-    border-radius: 32px;
-    background: rgba(255, 255, 255, 0.3);
-  }
-  .boxed:before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    margin: -2px;
-    background-image: linear-gradient(
-      to right,
-      ${colors.white100},
-      ${colors.white50}
-    );
-    border-radius: 32px;
-  }
-`;
 const Container = styled.div`
   display: flex;
   width: 204px;

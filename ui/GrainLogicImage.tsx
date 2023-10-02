@@ -1,20 +1,18 @@
 import * as React from "react";
 import Image from "next/image";
 import styled from "styled-components";
-import { LAYER } from './constants';
+import { LAYER } from "./constants";
 
 const ImageWrapper = styled.div`
-  margin: 160px 15px 84px 64px;
   position: relative;
-  width: 1000px;
-  height: 600px;
+
   .under-layout {
     position: absolute;
-    z-index:  ${LAYER.LAYER1};
+    z-index: ${LAYER.LAYER1};
   }
   .main-layout {
     position: absolute;
-    z-index: ${LAYER.LAYER2};;
+    z-index: ${LAYER.LAYER2};
   }
 `;
 
