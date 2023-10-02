@@ -91,15 +91,17 @@ This is an example of how to list things you need to use the software and how to
   ```sh
   npm install npm@latest -g
   ```
-
+  ```sh
+  npm run dev
+  ```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-![Screenshot 2023-10-02 at 14.15.55.png](..%2F..%2F..%2FDesktop%2FScreenshot%202023-10-02%20at%2014.15.55.png)
-![Screenshot 2023-10-02 at 14.16.34.png](..%2F..%2F..%2FDesktop%2FScreenshot%202023-10-02%20at%2014.16.34.png)
-![Screenshot 2023-10-02 at 14.16.21.png](..%2F..%2F..%2FDesktop%2FScreenshot%202023-10-02%20at%2014.16.21.png)
-![Screenshot 2023-10-02 at 14.17.44.png](..%2F..%2F..%2FDesktop%2FScreenshot%202023-10-02%20at%2014.17.44.png)
+![desktop.png](public%2Freadme%2Fdesktop.png)
+![desktop-hover.png](public%2Freadme%2Fdesktop-hover.png)
+![desktop-modal.png](public%2Freadme%2Fdesktop-modal.png)
+![mobile.png](public%2Freadme%2Fmobile.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
