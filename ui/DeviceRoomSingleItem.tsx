@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Typography } from "./Typography";
 import { colors, shadows } from "./colors";
 import cl from "classnames";
+import { MobileBreakpoint } from "./constants";
 
 const Container = styled.div`
   display: flex;
@@ -10,6 +11,9 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 32px;
+  @media (max-width: ${MobileBreakpoint}px) {
+    width: 300px;
+  }
 `;
 
 const SmallWidget = styled.div`
@@ -26,6 +30,10 @@ const SmallWidget = styled.div`
   background: ${colors.gray8};
   box-shadow: ${shadows.shadow1};
   backdrop-filter: blur(40px);
+  @media (max-width: ${MobileBreakpoint}px) {
+    width: 250px;
+    border-radius: 30px;
+  }
 
   &:hover {
     background: ${colors.gray30};
@@ -53,15 +61,19 @@ const Status = styled.div`
   justify-content: center;
   align-items: center;
   gap: 36px;
-  border-radius: 50%;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
   border: 2px solid ${colors.white100};
   background: ${colors.gray50};
 
   svg {
     width: 80px;
     height: 80px;
+    @media (max-width: ${MobileBreakpoint}px) {
+      width: 140px;
+      height: 140px;
+    }
     path {
       fill: ${colors.white100};
     }

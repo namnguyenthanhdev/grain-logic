@@ -25,35 +25,35 @@ import { useModalContent } from "./useModalContent";
 
 const Container = styled.div`
   background: linear-gradient(135deg, ${colors.blue100}, ${colors.purple100});
-  display: flex;
-  gap: 32px;
+  //display: flex;
+  //gap: 32px;
 `;
 
 const Content = styled.div`
-  margin: 83px 861px 0 121px;
+  width: 100%;
   .sub-header {
     width: 300px;
   }
 `;
 
 const ImageLayout = styled.div`
-  margin: 160px 15px 84px 0;
-  width: 1000px;
+  margin-top: 100px;
+  width: 600px;
   height: 600px;
 `;
 
 const LeftContent = styled.div`
-  width: 50%;
+  //width: 50%;
 `;
 
 const RightContent = styled.div`
-  padding-top: 198px;
-  width: 50%;
+  //padding-top: 198px;
+  //width: 50%;
 `;
 
 const MenuListIcon = styled.div`
-  display: flex;
-  flex-flow: row wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 32px;
 `;
 

@@ -1,3 +1,5 @@
+import * as React from "react";
+
 export const LAYER = {
   LAYER1: 100,
   LAYER2: 200,
@@ -17,3 +19,5 @@ export const ModalIds = {
   second: "second-modal",
   third: "third-modal",
 };
+
+export const MobileBreakpoint = 390;

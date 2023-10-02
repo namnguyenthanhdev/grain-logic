@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Typography } from "./Typography";
 import { colors, shadows } from "./colors";
 import cl from "classnames";
+import { MobileBreakpoint } from "./constants";
 
 const Container = styled.div`
   display: flex;
@@ -10,17 +11,24 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 32px;
+  @media (max-width: ${MobileBreakpoint}px) {
+    width: 300px;
+  }
 `;
 
 const SmallWidget = styled.div`
   width: 176px;
-  height: 176px;
+  aspect-ratio: 1;
   padding: 16px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
-
   border-radius: 24px;
+
+  @media (max-width: ${MobileBreakpoint}px) {
+    width: 250px;
+    border-radius: 30px;
+  }
 
   background: ${colors.gray8};
   box-shadow: ${shadows.shadow1};
@@ -49,6 +57,10 @@ const SmallWidget = styled.div`
   svg {
     width: 40px;
     height: 40px;
+    @media (max-width: ${MobileBreakpoint}px) {
+      width: 64px;
+      height: 64px;
+    }
     path {
       fill: ${colors.white100};
     }
@@ -59,8 +71,13 @@ const IconItem = styled.div`
   display: flex;
   align-items: flex-start;
   width: 64px;
-  height: 64px;
+  aspect-ratio: 1;
   border-radius: 50%;
+
+  @media (max-width: ${MobileBreakpoint}px) {
+    width: 100px;
+    border-radius: 30px;
+  }
 `;
 
 const Status = styled.div`
