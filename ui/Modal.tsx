@@ -3,7 +3,7 @@ import cl from "classnames";
 import { colors, shadows } from "./colors";
 import { Typography } from "./Typography";
 import * as React from "react";
-import { LAYER } from './constants';
+import { LAYER, MobileBreakpoint } from './constants';
 
 const Container = styled.div`
   position: fixed;
@@ -38,7 +38,12 @@ const Container = styled.div`
     box-shadow: ${shadows.shadow1};
     backdrop-filter: blur(40px);
     width: 1320px;
-    height: 360px;
+    padding: 64px;
+
+    @media (max-width: ${MobileBreakpoint}px) {
+      width: 500px;
+      padding: 32px;
+    }
   }
 
   &.display-block {

@@ -25,12 +25,11 @@ import { useModalContent } from "./useModalContent";
 
 const Container = styled.div`
   background: linear-gradient(135deg, ${colors.blue100}, ${colors.purple100});
-  //display: flex;
-  //gap: 32px;
 `;
 
 const Content = styled.div`
   width: 100%;
+  padding-left: 64px;
   .sub-header {
     width: 300px;
   }
@@ -42,19 +41,14 @@ const ImageLayout = styled.div`
   height: 600px;
 `;
 
-const LeftContent = styled.div`
-  //width: 50%;
-`;
+const LeftContent = styled.div``;
 
-const RightContent = styled.div`
-  //padding-top: 198px;
-  //width: 50%;
-`;
+const RightContent = styled.div``;
 
 const MenuListIcon = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
+  gap: 16px;
 `;
 
 export const HomeEntranceMobile = () => {

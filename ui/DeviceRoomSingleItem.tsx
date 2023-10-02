@@ -88,7 +88,7 @@ export interface DeviceRoomSingleItemProps {
 export const DeviceRoomSingleItem = (props: DeviceRoomSingleItemProps) => {
   const { content, icon, disabled } = props;
   return (
-    <Container>
+    <Container className="device-room-single">
       <SmallWidget className={cl("widget", { disabled })}>
         <Status className="status">{icon}</Status>
       </SmallWidget>

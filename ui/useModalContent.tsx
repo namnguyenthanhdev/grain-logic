@@ -1,5 +1,5 @@
 import * as React from "react";
-import { ModalIds } from "./constants";
+import { MobileBreakpoint, ModalIds } from "./constants";
 import { DeviceRoomSingleItem } from "./DeviceRoomSingleItem";
 import {
   Additem,
@@ -21,9 +21,35 @@ const GroupWrapper = styled.div`
   gap: 60px;
   justify-content: center;
   align-items: center;
-
   .device-room-label {
     width: max-content;
+  }
+
+  @media (max-width: ${MobileBreakpoint}px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    .device-room-single {
+      width: auto;
+      height: 304px;
+      gap: 0;
+    }
+    .widget {
+      width: 150px;
+      height: 150px;
+    }
+    .status {
+      width: 120px;
+      height: 120px;
+    }
+    .device-room-label {
+      width: 180px;
+      text-align: center;
+    }
+    svg {
+      width: 80px;
+      height: 80px;
+    }
   }
 `;
 
