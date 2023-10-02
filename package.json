@@ -6,11 +6,25 @@
     "start": "next start"
   },
   "dependencies": {
+    "classnames": "^2.3.2",
+    "iconsax-react": "^0.0.8",
     "next": "latest",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-responsive": "^9.0.2",
+    "styled-components": "^6.0.8"
   },
   "engines": {
     "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/node": "20.7.0",
+    "@types/react": "18.2.23",
+    "babel-plugin-styled-components": "^2.1.4",
+    "prettier": "^3.0.3",
+    "typescript": "5.2.2"
+  },
+  "resolutions": {
+    "styled-components": "^5"
   }
 }
